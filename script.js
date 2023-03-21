@@ -90,3 +90,36 @@
            })};
 
      render();
+        
+        
+     //controller
+    function addtodo(){
+       let textbox=document.getElementById('Todo-title');
+       let title=textbox.value;
+
+       const datepicker=document.getElementById('date-picker')
+       duedate= datepicker.value
+
+       createatodo(title, duedate);
+
+     
+       render();
+    }
+
+
+
+    
+
+
+    function deletetodo(event)
+   {
+
+      const deletebutton=event.target;
+      const idtodelete=deletebutton.id;
+     console.log(deletebutton.id);
+     removetodo(idtodelete)
+    
+
+      render();
+
+   }
