@@ -49,3 +49,44 @@
       else
       { return true;}
 
+ });
+
+      savetodos();
+          
+      
+       }
+
+       function savetodos()
+     {
+       localStorage.setItem('todos', JSON.stringify(todos))
+
+     }
+
+
+       //View
+
+       function render (){
+
+           //reset the list
+           document.getElementById('todo-list').innerHTML=''
+           todos.forEach(function(todos){
+
+           let element = document.createElement('div');
+           element.innerText=todos.title+' '+ todos.dueDate;
+           
+
+           const deletebutton= document.createElement('button')
+           deletebutton.innerText='Delete';
+           deletebutton.style='margin-left:12px;'
+           deletebutton.onclick=deletetodo;
+           deletebutton.id=todos.id
+
+
+           element.appendChild(deletebutton)
+           let todolist=document.getElementById('todo-list')
+           
+           todolist.appendChild(element);
+
+           })};
+
+     render();
