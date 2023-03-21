@@ -1,3 +1,5 @@
+// MVC
+
 //Model
     // if local storage has a list of todos use it
     let todos;
